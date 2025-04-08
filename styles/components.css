@@ -1,24 +1,79 @@
 /*
  * Component-specific styles for CommitTracker
- * This file will be expanded in future commits with styles for individual components
+ * This file contains styles for individual components
  */
 
-/* Placeholder for task list styles */
-.task-list {
-    /* Will be implemented in future commits */
-}
-
-/* Placeholder for task item styles */
-.task-item {
-    /* Will be implemented in future commits */
-}
-
-/* Placeholder for task form styles */
+/* Task Form Styles */
 .task-form {
-    /* Will be implemented in future commits */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-/* Placeholder for button styles */
+.form-placeholder {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Task List Styles */
+.task-list {
+    margin-top: 1.5rem;
+}
+
+.task-placeholder {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Task Controls Styles */
+.task-filters, .task-sort {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Button Styles */
 .btn {
-    /* Will be implemented in future commits */
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #3a5a8c;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .task-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+    }
 }
