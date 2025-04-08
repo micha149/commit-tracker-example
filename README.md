@@ -30,6 +30,10 @@ assets/                 # Images, icons, etc.
 
 This project uses [Vite](https://vitejs.dev/) for development and building.
 
+### Using Node.js locally
+
+If you have Node.js installed, you can use these commands:
+
 To start the development server:
 ```
 npm run dev
@@ -43,6 +47,37 @@ npm run build
 To preview the production build:
 ```
 npm run preview
+```
+
+### Using Docker (recommended for workshop participants)
+
+This project includes Docker configuration for both development and production environments.
+
+#### Prerequisites
+- Docker
+- Docker Compose
+
+#### Development Server
+
+To start the development server in Docker:
+```
+docker-compose up -d
+```
+
+To stop the server:
+```
+docker-compose down
+```
+
+The application will be available at http://localhost:5173
+
+Changes to the source code will be reflected immediately due to the volume mapping.
+
+#### Production Build
+
+The Dockerfile includes a production build stage that can be used to create a production-ready image:
+```
+docker build --target production -t git-workshop-prod .
 ```
 
 ## Purpose
