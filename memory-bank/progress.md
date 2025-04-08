@@ -11,6 +11,7 @@
   - ✅ Datenmodell und Storage-Funktionen mit localStorage
   - ✅ Hilfsfunktionen für Datumsverarbeitung
   - ✅ Grundlegende Navigation
+  - ✅ Docker-Setup für einfache Entwicklung ohne Node.js-Installation
 
 ## Was noch zu erledigen ist
 - 🔄 Beispielanwendung vervollständigen

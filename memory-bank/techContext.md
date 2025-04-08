@@ -9,6 +9,8 @@ Für die Beispiel-Web-Anwendung "CommitTracker" im Git-Workshop werden folgende 
 - **Vite**: Build-Tool für schnelle Entwicklung und Bundling
 - **localStorage**: Lokale Datenspeicherung im Browser
 - **Git**: Versionskontrolle (Hauptfokus des Workshops)
+- **Docker**: Containerisierung für konsistente Entwicklungs- und Produktionsumgebungen
+- **Nginx**: Webserver für die Produktionsumgebung
 
 ## Entwicklungsumgebung
 Die Entwicklungsumgebung ist bewusst einfach gehalten, aber mit modernen Tools ausgestattet:
@@ -16,7 +18,8 @@ Die Entwicklungsumgebung ist bewusst einfach gehalten, aber mit modernen Tools a
 - **Editor**: Beliebiger Texteditor oder IDE (VS Code, WebStorm, etc.)
 - **Browser**: Moderner Browser mit Developer Tools (Chrome, Firefox, etc.)
 - **Git-Client**: Kommandozeilen-Git oder GUI-Tool nach Wahl
-- **Node.js**: Für die Ausführung von Vite und npm-Paketen
+- **Docker** (empfohlen): Container-Umgebung für konsistente Entwicklung ohne lokale Node.js-Installation
+- **Node.js** (optional): Für die Ausführung von Vite und npm-Paketen, wenn nicht Docker verwendet wird
 - **Vite Dev Server**: Lokaler Entwicklungsserver mit Hot Module Replacement
 
 ## Technische Einschränkungen

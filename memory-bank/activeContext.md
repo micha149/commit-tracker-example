@@ -31,6 +31,7 @@ Der aktuelle Fokus liegt auf der Implementierung der CommitTracker Task App als 
 - **Lokale Datenspeicherung**: Die Verwendung von localStorage ermöglicht eine einfache Datenpersistenz ohne Backend-Anforderungen.
 - **Modulare Struktur**: Die Anwendung wurde in klar definierte Module aufgeteilt, um gezielte Änderungen für verschiedene Commit-Typen zu ermöglichen.
 - **Sprachauswahl**: Die Dokumentation und Kommentare werden auf Deutsch verfasst, während der Code und die Commit-Messages auf Englisch sind, um gängigen Praktiken zu folgen.
+- **Docker-Setup**: Wir haben ein Multi-Stage-Dockerfile und Docker Compose hinzugefügt, um den Workshop-Teilnehmern eine einfache Entwicklungsumgebung ohne Node.js-Installation zu bieten. Das Setup unterstützt sowohl Entwicklungs- als auch Produktionsumgebungen.
 
 ## Wichtige Muster und Präferenzen
 - **Commit-Message-Format**: Wir verwenden das Format "Befehlsform (Imperativ)" für die erste Zeile der Commit-Message, gefolgt von einer detaillierten Beschreibung, die Entscheidungen und Herausforderungen erläutert.
