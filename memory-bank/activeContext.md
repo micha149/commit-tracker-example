@@ -34,7 +34,31 @@ Der aktuelle Fokus liegt auf der Implementierung der CommitTracker Task App als 
 - **Docker-Setup**: Wir haben ein Multi-Stage-Dockerfile und Docker Compose hinzugefügt, um den Workshop-Teilnehmern eine einfache Entwicklungsumgebung ohne Node.js-Installation zu bieten. Das Setup unterstützt sowohl Entwicklungs- als auch Produktionsumgebungen.
 
 ## Wichtige Muster und Präferenzen
-- **Commit-Message-Format**: Wir verwenden das Format "Befehlsform (Imperativ)" für die erste Zeile der Commit-Message, gefolgt von einer detaillierten Beschreibung, die Entscheidungen und Herausforderungen erläutert.
+- **Commit-Message-Format**: Wir verwenden das Format "Befehlsform (Imperativ)" für die erste Zeile der Commit-Message, gefolgt von einer detaillierten Beschreibung als zusammenhängender Text (nicht als Aufzählungsliste), die Entscheidungen und Herausforderungen erläutert. Beispiel:
+
+  ```
+  Implement base styling
+
+  The base styling establishes a consistent visual language for the application
+  with a focus on component-specific styles. I chose a clean modern design with
+  a blue color scheme that provides good contrast and readability.
+
+  For the component styles I implemented a flexible layout using CSS Flexbox
+  which adapts well to different screen sizes. The responsive design considerations
+  were implemented from the start with media queries to handle smaller screens.
+  ```
+
+  NICHT so:
+
+  ```
+  Implement base styling
+
+  - Added base styling with blue color scheme
+  - Implemented responsive design with CSS Flexbox
+  - Created component-specific styles
+  - Added hover states for buttons
+  ```
+
 - **Commit-Inhalte**: Commit-Messages sollten sich immer auf die Änderungen im Vergleich zum letzten Commit-Zustand beziehen. Es sollten keine Änderungen erwähnt werden, die nicht im vorherigen Commit vorhanden waren (z.B. nicht "von Google Fonts zu Fontsource gewechselt", wenn Google Fonts vorher gar nicht verwendet wurden).
 - **Commit-Granularität**: Wir haben die Anwendung in logische Einheiten aufgeteilt, die jeweils einen eigenen Commit bilden:
   1. Projektstruktur
