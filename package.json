@@ -1,0 +1,17 @@
+{
+  "name": "git-workshop",
+  "version": "1.0.0",
+  "description": "A simple task management application built with HTML, CSS, and JavaScript. This application serves as an example project for the Git workshop \"Clean Commits for a Sustainable Code History\".",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.2.5"
+  }
+}
