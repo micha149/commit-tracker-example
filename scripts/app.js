@@ -1,7 +1,10 @@
 /**
  * Main application script for CommitTracker
- * This file contains basic functionality that will be expanded in future commits
+ * This file contains the main application logic
  */
+
+import StorageService from './services/storage.js';
+import * as DateUtils from './utils/dateUtils.js';
 
 // Wait for the DOM to be fully loaded before executing code
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,11 +18,50 @@ document.addEventListener('DOMContentLoaded', function() {
  * Initialize the application
  */
 function initApp() {
-    // This function will be expanded in future commits
-    // to include task management functionality
+    // Initialize storage with sample data if empty
+    StorageService.initializeWithSampleTasks();
+
+    // Log the number of tasks
+    const tasks = StorageService.getTasks();
+    console.log(`Loaded ${tasks.length} tasks from storage`);
 
     // Display a welcome message
     console.log('Welcome to CommitTracker!');
     console.log('This is a simple task management application.');
-    console.log('Future commits will add more functionality.');
+
+    // Log sample date formatting
+    const today = new Date().toISOString();
+    console.log('Today formatted:', DateUtils.formatDate(today));
+    console.log('Relative time:', DateUtils.getRelativeTimeDescription(today));
+
+    // Setup event listeners for navigation
+    setupNavigation();
+}
+
+/**
+ * Setup navigation event listeners
+ */
+function setupNavigation() {
+    const navLinks = document.querySelectorAll('.main-nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+
+            // Add active class to clicked link
+            this.classList.add('active');
+
+            // Handle navigation (to be expanded in future commits)
+            const target = this.textContent.trim().toLowerCase();
+            console.log(`Navigating to: ${target}`);
+
+            // For now, just show an alert
+            if (target !== 'tasks') {
+                alert(`The "${target}" section will be implemented in future commits.`);
+            }
+        });
+    });
 }
