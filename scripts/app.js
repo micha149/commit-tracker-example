@@ -5,6 +5,7 @@
 
 import StorageService from './services/storage.js';
 import * as DateUtils from './utils/dateUtils.js';
+import TaskForm from './components/taskForm.js';
 
 // Wait for the DOM to be fully loaded before executing code
 document.addEventListener('DOMContentLoaded', function() {
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function initApp() {
     // Initialize storage with sample data if empty
     StorageService.initializeWithSampleTasks();
+
+    // Initialize components
+    TaskForm.init();
 
     // Log the number of tasks
     const tasks = StorageService.getTasks();
