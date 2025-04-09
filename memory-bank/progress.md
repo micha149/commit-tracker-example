@@ -12,24 +12,29 @@
   - ✅ Hilfsfunktionen für Datumsverarbeitung
   - ✅ Grundlegende Navigation
   - ✅ Docker-Setup für einfache Entwicklung ohne Node.js-Installation
+- ✅ Erste Übung erstellt
+  - ✅ Übungsszenario zur Aufteilung von Änderungen in sinnvolle Commits
+  - ✅ Patch-File mit verschiedenen Arten von Änderungen (Feature, Refactoring, Codestyle)
+  - ✅ Übungsbeschreibung mit klaren Anweisungen
 
 ## Was noch zu erledigen ist
 - 🔄 Beispielanwendung vervollständigen
-  - Task-Liste-Komponente implementieren
+  - Task-Liste-Komponente implementieren (als Teil der Übungen)
   - Task-Formular-Komponente implementieren
   - Statistik-Dashboard erstellen
   - Bugfixes und Refactorings für Übungszwecke
-- 🔄 Übungsszenarien vorbereiten
-  - Beispiele für verschiedene Commit-Typen
-  - Problematische Commits für Übungen
-  - Lösungsbeispiele
+- 🔄 Weitere Übungsszenarien vorbereiten
+  - Übungen für Commit-Amending
+  - Übungen für interaktives Rebasing
+  - Übungen für Cherry-Picking
+  - Übungen für Commit-Splitting
 - 🔄 Workshop-Material erstellen
   - Schritt-für-Schritt-Anleitungen
   - Cheat-Sheet mit Git-Befehlen
   - Präsentationsfolien
 
 ## Aktueller Status
-Das Projekt hat die Initialisierungsphase abgeschlossen und befindet sich nun in der aktiven Entwicklungsphase. Die Beispielanwendung "CommitTracker" ist bereits funktionsfähig mit grundlegender Struktur, Styling und Datenpersistenz. Die Commit-Historie zeigt bereits verschiedene Arten von Änderungen und demonstriert gute Praktiken für Commit-Messages.
+Das Projekt hat die Initialisierungsphase abgeschlossen und befindet sich nun in der aktiven Entwicklungsphase. Die Beispielanwendung "CommitTracker" ist bereits funktionsfähig mit grundlegender Struktur, Styling und Datenpersistenz. Die erste Übung zur Aufteilung von Änderungen in sinnvolle Commits wurde erstellt und kann von den Workshop-Teilnehmern durchgeführt werden. Die Commit-Historie zeigt bereits verschiedene Arten von Änderungen und demonstriert gute Praktiken für Commit-Messages.
 
 ## Bekannte Probleme
 - Keine bekannten Probleme zum jetzigen Zeitpunkt
@@ -48,6 +53,12 @@ Das Projekt hat die Initialisierungsphase abgeschlossen und befindet sich nun in
 - Implementierung von localStorage für Datenpersistenz
 - Strukturierung der Anwendung in Module für bessere Wartbarkeit
 - Erstellung einer klaren Commit-Historie mit aussagekräftigen Messages
+
+### 09.04.2025 - Erstellung der ersten Übung
+- Entwicklung eines Patch-Files mit verschiedenen Arten von Änderungen
+- Entscheidung für eine Übungsstruktur mit Patch-Files statt direkter Implementierung
+- Erstellung einer klaren Übungsbeschreibung mit Anweisungen zur Anwendung des Patches
+- Fokus auf die Analyse und Aufteilung von Änderungen in sinnvolle Commits
 
 ### Nächste Meilensteine
 1. **Vollständige Anwendung (Ziel: 10.04.2025)**
