@@ -1,0 +1,8 @@
+/*
+ * Task Controls Component Styles
+ */
+
+.task-filters, .task-sort {
+    display: flex;
+    gap: 0.5rem;
+}
