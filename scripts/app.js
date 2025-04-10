@@ -6,6 +6,7 @@
 import StorageService from './services/storage.js';
 import * as DateUtils from './utils/dateUtils.js';
 import TaskForm from './components/taskForm.js';
+import Statistics from './components/statistics.js';
 
 // Wait for the DOM to be fully loaded before executing code
 document.addEventListener('DOMContentLoaded', function() {
@@ -47,6 +48,9 @@ function initApp() {
  */
 function setupNavigation() {
     const navLinks = document.querySelectorAll('.main-nav a');
+    const taskFormContainer = document.getElementById('task-form-container');
+    const taskListContainer = document.getElementById('task-list-container');
+    const statisticsContainer = document.getElementById('statistics-container');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -58,12 +62,24 @@ function setupNavigation() {
             // Add active class to clicked link
             this.classList.add('active');
 
-            // Handle navigation (to be expanded in future commits)
+            // Handle navigation
             const target = this.textContent.trim().toLowerCase();
             console.log(`Navigating to: ${target}`);
 
-            // For now, just show an alert
-            if (target !== 'tasks') {
+            // Show/hide sections based on navigation
+            if (target === 'tasks') {
+                taskFormContainer.style.display = 'block';
+                taskListContainer.style.display = 'block';
+                statisticsContainer.style.display = 'none';
+            } else if (target === 'statistics') {
+                taskFormContainer.style.display = 'none';
+                taskListContainer.style.display = 'none';
+                statisticsContainer.style.display = 'block';
+
+                // Initialize statistics component when navigating to it
+                Statistics.init();
+            } else {
+                // For other sections, show an alert for now
                 alert(`The "${target}" section will be implemented in future commits.`);
             }
         });
