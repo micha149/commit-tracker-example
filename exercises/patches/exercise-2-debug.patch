@@ -1,0 +1,47 @@
+--- a/scripts/components/statistics.js	2025-04-10 23:38:22
++++ b/scripts/components/statistics.js	2025-04-10 23:51:47
+@@ -240,8 +240,6 @@
+      * @returns {Object} Due date statistics
+      */
+     calculateDueDateStats(tasks) {
+-        console.log('DEBUG: Calculating due date statistics'); // DEBUG
+-
+         const now = new Date();
+         now.setHours(0, 0, 0, 0);
+
+@@ -258,9 +256,6 @@
+         const daysUntilEndOfWeek = 7 - now.getDay();
+         const endOfWeek = new Date(now);
+         endOfWeek.setDate(now.getDate() + daysUntilEndOfWeek);
+-
+-        console.log('DEBUG: Today is:', now.toISOString()); // DEBUG
+-        console.log('DEBUG: End of week is:', endOfWeek.toISOString()); // DEBUG
+
+         // Categorize tasks by due date
+         tasks.forEach(task => {
+@@ -272,8 +267,6 @@
+             const dueDate = new Date(task.dueDate);
+             dueDate.setHours(0, 0, 0, 0);
+
+-            console.log(`DEBUG: Task "${task.title}" due date:`, dueDate.toISOString()); // DEBUG
+-
+             if (dueDate < now) {
+                 dueDateStats.overdue++;
+             } else if (dueDate.getTime() === now.getTime()) {
+@@ -290,7 +283,6 @@
+             dueDateStats[key + 'Percentage'] = (dueDateStats[key] / tasks.length) * 100;
+         });
+
+-        console.log('DEBUG: Due date statistics result:', dueDateStats); // DEBUG
+         return dueDateStats;
+     },
+
+@@ -329,8 +321,6 @@
+                 </div>
+             </div>
+         `;
+-
+-        console.log('DEBUG: Rendered due date statistics'); // DEBUG
+     },
+
+     /**

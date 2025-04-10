@@ -1,0 +1,48 @@
+diff --git a/scripts/components/statistics.js b/scripts/components/statistics.js
+index f9c298f..4898b61 100644
+--- a/scripts/components/statistics.js
++++ b/scripts/components/statistics.js
+@@ -240,9 +240,6 @@ const Statistics = {
+      * @returns {Object} Due date statistics
+      */
+     calculateDueDateStats(tasks) {
+-        const now = new Date();
+-        now.setHours(0, 0, 0, 0);
+-
+         // Initialize counters
+         const dueDateStats = {
+             overdue: 0,
+@@ -252,10 +249,10 @@ const Statistics = {
+             noDueDate: 0
+         };
+ 
+-        // Calculate days until end of week
+-        const daysUntilEndOfWeek = 7 - now.getDay();
+-        const endOfWeek = new Date(now);
+-        endOfWeek.setDate(now.getDate() + daysUntilEndOfWeek);
++        // Get end of week date using DateUtils
++        const today = new Date().toISOString();
++        const endOfWeekDate = new Date();
++        endOfWeekDate.setDate(endOfWeekDate.getDate() + (7 - endOfWeekDate.getDay()));
+ 
+         // Categorize tasks by due date
+         tasks.forEach(task => {
+@@ -264,14 +261,12 @@ const Statistics = {
+                 return;
+             }
+ 
+-            const dueDate = new Date(task.dueDate);
+-            dueDate.setHours(0, 0, 0, 0);
+-
+-            if (dueDate < now) {
++            // Use DateUtils to check if date is in past, today, or this week
++            if (DateUtils.isDateInPast(task.dueDate)) {
+                 dueDateStats.overdue++;
+-            } else if (dueDate.getTime() === now.getTime()) {
++            } else if (DateUtils.isDateToday(task.dueDate)) {
+                 dueDateStats.dueToday++;
+-            } else if (dueDate <= endOfWeek) {
++            } else if (new Date(task.dueDate) <= endOfWeekDate) {
+                 dueDateStats.dueThisWeek++;
+             } else {
+                 dueDateStats.dueLater++;
