@@ -7,6 +7,14 @@
     padding: 1rem;
 }
 
+/* Section description */
+.section-description {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    max-width: 800px;
+}
+
 /* Statistics grid layout */
 .statistics-grid {
     display: grid;

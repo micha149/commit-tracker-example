@@ -40,8 +40,15 @@ const Statistics = {
         const tasks = StorageService.getTasks();
         console.log('DEBUG: Fetched tasks for statistics:', tasks); // DEBUG
 
+        // Get the statistics content container
+        const contentContainer = this.containerElement.querySelector('.statistics-content');
+        if (!contentContainer) {
+            console.error('Statistics content container not found');
+            return;
+        }
+
         if (tasks.length === 0) {
-            this.containerElement.innerHTML = `
+            contentContainer.innerHTML = `
                 <div class="empty-state">
                     <p>No tasks available to generate statistics.</p>
                     <p>Create some tasks to see statistics here.</p>
@@ -51,7 +58,7 @@ const Statistics = {
         }
 
         // Basic statistics HTML structure
-        this.containerElement.innerHTML = `
+        contentContainer.innerHTML = `
             <div class="statistics-grid">
                 <div class="stat-card" id="status-stats">
                     <h3>Task Status</h3>
