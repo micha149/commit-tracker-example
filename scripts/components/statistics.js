@@ -38,7 +38,6 @@ const Statistics = {
 
         // Get tasks from storage
         const tasks = StorageService.getTasks();
-        console.log('DEBUG: Fetched tasks for statistics:', tasks); // DEBUG
 
         // Get the statistics content container
         const contentContainer = this.containerElement.querySelector('.statistics-content');
@@ -92,19 +91,14 @@ const Statistics = {
      * @returns {Object} Status statistics
      */
     calculateStatusStats(tasks) {
-        console.log('DEBUG: Calculating status statistics'); // DEBUG
-
         const completed = tasks.filter(task => task.completed).length;
         const pending = tasks.length - completed;
 
-        const stats = {
+        return {
             completed,
             pending,
             completionRate: tasks.length > 0 ? (completed / tasks.length) * 100 : 0
         };
-
-        console.log('DEBUG: Status statistics result:', stats); // DEBUG
-        return stats;
     },
 
     /**
@@ -134,18 +128,14 @@ const Statistics = {
                 </div>
             </div>
         `;
-
-        console.log('DEBUG: Rendered status statistics'); // DEBUG
     },
 
     /**
      * Calculate task category statistics
      * @param {Array} tasks - Array of tasks
-     * @returns {Object} Category statistics
+     * @returns {Array} Category statistics
      */
     calculateCategoryStats(tasks) {
-        console.log('DEBUG: Calculating category statistics'); // DEBUG
-
         // Count tasks by category
         const categoryCounts = {};
 
@@ -162,10 +152,7 @@ const Statistics = {
         }));
 
         // Sort by count (descending)
-        categoryStats.sort((a, b) => b.count - a.count);
-
-        console.log('DEBUG: Category statistics result:', categoryStats); // DEBUG
-        return categoryStats;
+        return categoryStats.sort((a, b) => b.count - a.count);
     },
 
     /**
@@ -195,17 +182,14 @@ const Statistics = {
         `).join('');
 
         container.innerHTML = categoryBars;
-        console.log('DEBUG: Rendered category statistics'); // DEBUG
     },
 
     /**
      * Calculate task priority statistics
      * @param {Array} tasks - Array of tasks
-     * @returns {Object} Priority statistics
+     * @returns {Array} Priority statistics
      */
     calculatePriorityStats(tasks) {
-        console.log('DEBUG: Calculating priority statistics'); // DEBUG
-
         // Count tasks by priority
         const priorityCounts = {
             high: 0,
@@ -219,14 +203,11 @@ const Statistics = {
         });
 
         // Convert to array of objects for easier rendering
-        const priorityStats = Object.keys(priorityCounts).map(priority => ({
+        return Object.keys(priorityCounts).map(priority => ({
             name: priority,
             count: priorityCounts[priority],
             percentage: (priorityCounts[priority] / tasks.length) * 100
         }));
-
-        console.log('DEBUG: Priority statistics result:', priorityStats); // DEBUG
-        return priorityStats;
     },
 
     /**
@@ -251,7 +232,6 @@ const Statistics = {
         `).join('');
 
         container.innerHTML = priorityBars;
-        console.log('DEBUG: Rendered priority statistics'); // DEBUG
     },
 
     /**
@@ -372,7 +352,6 @@ const Statistics = {
             color += ('00' + value.toString(16)).substr(-2);
         }
 
-        console.log(`DEBUG: Generated color for category "${category}":`, color); // DEBUG
         return color;
     }
 };
