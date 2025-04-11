@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About CommitTracker - A simple task management application for the Git workshop">
+    <meta name="keywords" content="task management, todo, git workshop, about">
+    <meta name="author" content="Git Workshop">
+    <title>About CommitTracker</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <!-- Fonts will be imported in CSS -->
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="header-content">
+                <h1>CommitTracker</h1>
+                <p class="tagline">Manage your tasks efficiently</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Tasks</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="container">
+                <h2>About CommitTracker</h2>
+                <div class="about-content">
+                    <p>CommitTracker is a simple task management application developed as part of the Git workshop "Saubere Commits für eine nachhaltige Code-Historie".</p>
+
+                    <h3>Purpose</h3>
+                    <p>This application serves as a practical example for demonstrating various Git techniques and best practices for organizing commits. It provides a realistic codebase that workshop participants can use to practice different Git operations.</p>
+
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Create and manage tasks with titles, descriptions, categories, and priorities</li>
+                        <li>Set due dates for tasks</li>
+                        <li>View task statistics and analytics</li>
+                        <li>Data persistence using localStorage</li>
+                    </ul>
+
+                    <h3>Technology</h3>
+                    <p>CommitTracker is built using basic web technologies to ensure accessibility for all developers:</p>
+                    <ul>
+                        <li>HTML5 for structure</li>
+                        <li>CSS3 for styling</li>
+                        <li>JavaScript (ES6+) for functionality</li>
+                        <li>Vite as a build tool</li>
+                        <li>localStorage for data persistence</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Git Workshop Example Project</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
